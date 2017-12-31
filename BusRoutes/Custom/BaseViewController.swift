@@ -29,7 +29,13 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    // Display a generic alert with some message
     func displayAlert(message: String) {
-        print(message)
+        let alertViewController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            alertViewController.dismiss(animated: true, completion: nil)
+        }
+        alertViewController.addAction(okAction)
+        present(alertViewController, animated: true, completion: nil)
     }
 }

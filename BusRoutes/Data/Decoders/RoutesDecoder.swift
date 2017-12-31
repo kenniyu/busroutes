@@ -1,5 +1,5 @@
 //
-//  RoutesTransformer.swift
+//  RoutesDecoder.swift
 //  BusRoutes
 //
 //  Created by Ken Yu on 12/29/17.
@@ -8,10 +8,15 @@
 
 import Foundation
 
-class RoutesTransformer {
-    public static func decoded(json: Any?) -> [Route]? {
+class RoutesDecoder: Decoder {
+    override func decoded(json: Any?) -> Any? {
+        let routes = decode(json: json)
+        return routes
+    }
+    
+    func decode(json: Any?) -> [Route]? {
         guard let json = json as? [[String: Any]] else { return nil }
-        let transformedRoutes = json.flatMap { jsonData -> Route? in
+        let routes = json.flatMap { jsonData -> Route? in
             guard let id = jsonData["id"] as? String else { return nil }
             guard let name = jsonData["name"] as? String else { return nil }
             guard let description = jsonData["description"] as? String else { return nil }
@@ -21,7 +26,7 @@ class RoutesTransformer {
             
             let busStops = stops.flatMap({ (stop) -> BusStop? in
                 guard let stopName = stop["name"] else { return nil }
-                return BusStop(name: stopName);
+                return BusStop(name: stopName)
             })
             
             let route = Route(id: id,
@@ -32,6 +37,6 @@ class RoutesTransformer {
                          stops: busStops)
             return route
         }
-        return transformedRoutes
+        return routes
     }
 }

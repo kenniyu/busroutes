@@ -14,7 +14,7 @@ enum RequestType {
     case put
     case delete
     
-    func toString() -> String {
+    func methodString() -> String {
         switch self {
         case .get:
             return "GET"
@@ -35,15 +35,13 @@ public class NetworkManager {
                         type: RequestType = .get,
                         params: [String: Any]? = nil,
                         completion: @escaping (Any?, Error?) -> Void) {
-        // Set the URL the request is being made to.
         guard let url = URL(string: urlString) else { return }
         let request = NSMutableURLRequest(url: url)
-        request.httpMethod = type.toString()
+        request.httpMethod = type.methodString()
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             if let data = data {
                 do {
-                    // Convert the data to JSON
                     let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
                     completion(jsonSerialized, nil)
                 }  catch let error {

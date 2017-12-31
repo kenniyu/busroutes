@@ -25,30 +25,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BusRoutes/Custom/BusRouteNavigationController.swift"
-            timestampString = "536385969.510557"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "navigationController(_:willShow:animated:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BusRoutes/RouteDetails/Views/RouteDetailsPageViewController.swift"
-            timestampString = "536385969.510662"
+            timestampString = "536388536.115037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BusRoutes.RouteDetailsPageViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "BusRoutes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyu/Documents/projects/BusRoutes/BusRoutes/RouteDetails/Views/RouteDetailsPageViewController.swift"
+                  timestampString = "536388536.140716"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "853">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BusRoutesTests.RouteDetailsPageViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "BusRoutesTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyu/Documents/projects/BusRoutes/BusRoutes/RouteDetails/Views/RouteDetailsPageViewController.swift"
+                  timestampString = "536388536.690164"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "853">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

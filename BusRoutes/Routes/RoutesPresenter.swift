@@ -24,21 +24,22 @@ class RoutesPresenter: RoutesViewModel {
             guard let `self` = self else { return }
             
             // Afterwards, updates view model
-            if let routes = RoutesTransformer.decoded(json: jsonData) {
-                self.routes = routes
-                self.routes.forEach({ [weak self] (route) in
-                    guard let `self` = self else { return }
-                    
-                    // Ideally we would use SDWebImage for this, a library dedicated to fetching and caching
-                    self.fetchRouteImage(route: route, completion: { (imageData) in
-                        route.image = UIImage(data: imageData)
-                        self.viewController.updateRoutes()
-                    })
-                })
-                self.viewController.updateRoutes()
-            } else {
+            guard let routes = RoutesDecoder().decoded(json: jsonData) as? [Route] else {
                 self.viewController.displayAlert(message: "Unable to decode routes")
+                return
             }
+            
+            self.routes = routes
+            self.routes.forEach({ [weak self] (route) in
+                guard let `self` = self else { return }
+                
+                // Ideally we would use SDWebImage for this, a library dedicated to fetching and caching
+                self.fetchRouteImage(route: route, completion: { (imageData) in
+                    route.image = UIImage(data: imageData)
+                    self.viewController.updateRoutes()
+                })
+            })
+            self.viewController.updateRoutes()
         }
     }
     

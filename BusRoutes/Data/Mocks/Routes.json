@@ -1,0 +1,35 @@
+[
+  {
+    "id": "5a0b468e5577abc14992d4ab",
+    "accessible": true,
+    "imageUrl": "http:\/\/www.freepngimg.com\/thumb\/bus\/1-bus-png-image-thumb.png",
+    "name": "Fayette Street",
+    "description": "Non id tempor non adipisicing.",
+    "stops": [
+      {
+        "name": "Cleveland Street"
+      },
+      {
+        "name": "Jackson Street"
+      }
+    ]
+  },
+  {
+    "id": "5a0b468e04bf014370a7f154",
+    "accessible": false,
+    "imageUrl": "http:\/\/www.freepngimg.com\/thumb\/bus\/2-bus-png-image-thumb.png",
+    "name": "Charles Place",
+    "description": "Ea commodo labore veniam culpa tempor nulla tempor officia incididunt id elit cillum veniam Lorem.",
+    "stops": [
+      {
+        "name": "Harway Avenue"
+      },
+      {
+        "name": "Prospect Avenue"
+      },
+      {
+        "name": "Schenck Court"
+      }
+    ]
+  }
+]
