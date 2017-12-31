@@ -39,6 +39,8 @@ class RoutesPresenter: RoutesViewModel {
                     self.viewController.updateRoutes()
                 })
             })
+            
+            // Then notifies view controller to update
             self.viewController.updateRoutes()
         }
     }
