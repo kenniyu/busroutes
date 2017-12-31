@@ -10,8 +10,9 @@ import UIKit
 
 class RouteDetailsViewController: BaseViewController {
     var presenter: RoutesPresenter?
-    var route: Route?
+    var route: Route!
     var eventHandler: RouteDetailsEventHandler!
+    var headerView: RouteDetailHeaderView?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +31,6 @@ class RouteDetailsViewController: BaseViewController {
     }
     
     func setup() {
-        title = "Route"
         setupTableView()
         
         let presenter = RouteDetailsPresenter(viewController: self)
@@ -46,6 +46,10 @@ class RouteDetailsViewController: BaseViewController {
         tableView.separatorStyle = .none
         tableView.separatorColor = .clear
         tableView.tableFooterView = UIView()
+        
+        let headerView = RouteDetailHeaderView(frame: CGRect(x: 0, y: 0, width: tableView.width, height: RouteDetailHeaderView.height))
+        headerView.setup(route: route)
+        tableView.tableHeaderView = headerView
     }
     
     func updateStops() {
@@ -53,19 +57,19 @@ class RouteDetailsViewController: BaseViewController {
     }
 }
 
+// MARK: UITableView methods
 extension RouteDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return route?.stops.count ?? 0
+        return route.stops.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RouteStopTableViewCell.reuseIdentifier, for: indexPath) as? RouteStopTableViewCell,
-            let route = self.route else {
-                return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RouteStopTableViewCell.reuseIdentifier, for: indexPath) as? RouteStopTableViewCell else {
+            return UITableViewCell()
         }
         
         let stop = route.stops[indexPath.row]
@@ -77,7 +81,7 @@ extension RouteDetailsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return RouteStopTableViewCell.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

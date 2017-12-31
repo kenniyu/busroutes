@@ -9,10 +9,6 @@
 import Foundation
 
 class RoutesTransformer {
-//    public static func transformedRouteCellData(route: Route) -> RouteTableViewCellData {
-//        return RouteTableViewCellData(name: route.name, image: route.image)
-//    }
-    
     public static func decoded(json: Any?) -> [Route]? {
         guard let json = json as? [[String: Any]] else { return nil }
         let transformedRoutes = json.flatMap { jsonData -> Route? in

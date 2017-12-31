@@ -32,6 +32,11 @@
 		599BA5BA1FF7855F008354CC /* RouteDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BA5B91FF7855F008354CC /* RouteDetailsPresenter.swift */; };
 		599BA5BE1FF7884F008354CC /* RouteStopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BA5BC1FF7884F008354CC /* RouteStopTableViewCell.swift */; };
 		599BA5BF1FF7884F008354CC /* RouteStopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599BA5BD1FF7884F008354CC /* RouteStopTableViewCell.xib */; };
+		599BA5C11FF83433008354CC /* RouteDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BA5C01FF83433008354CC /* RouteDetailHeaderView.swift */; };
+		599BA5C31FF83485008354CC /* RouteDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599BA5C21FF83485008354CC /* RouteDetailHeaderView.xib */; };
+		599BA5C61FF837A8008354CC /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BA5C51FF837A8008354CC /* UIView+.swift */; };
+		599BA5C91FF85C84008354CC /* BusRouteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BA5C81FF85C84008354CC /* BusRouteNavigationController.swift */; };
+		599BA5CD1FF8656D008354CC /* RouteDetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BA5CC1FF8656D008354CC /* RouteDetailsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,11 @@
 		599BA5B91FF7855F008354CC /* RouteDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsPresenter.swift; sourceTree = "<group>"; };
 		599BA5BC1FF7884F008354CC /* RouteStopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopTableViewCell.swift; sourceTree = "<group>"; };
 		599BA5BD1FF7884F008354CC /* RouteStopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteStopTableViewCell.xib; sourceTree = "<group>"; };
+		599BA5C01FF83433008354CC /* RouteDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailHeaderView.swift; sourceTree = "<group>"; };
+		599BA5C21FF83485008354CC /* RouteDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteDetailHeaderView.xib; sourceTree = "<group>"; };
+		599BA5C51FF837A8008354CC /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		599BA5C81FF85C84008354CC /* BusRouteNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRouteNavigationController.swift; sourceTree = "<group>"; };
+		599BA5CC1FF8656D008354CC /* RouteDetailsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,9 @@
 		599BA5581FF73A8E008354CC /* BusRoutes */ = {
 			isa = PBXGroup;
 			children = (
+				599BA5CE1FF895C6008354CC /* Data Models */,
+				599BA5C71FF85C6E008354CC /* Custom */,
+				599BA5C41FF8379E008354CC /* Extensions */,
 				599BA5B01FF783E6008354CC /* RouteDetails */,
 				599BA5841FF76417008354CC /* Routes */,
 				599BA5791FF73B1A008354CC /* Managers */,
@@ -155,7 +168,6 @@
 				599BA5891FF769A5008354CC /* RoutesTransformer.swift */,
 				599BA5A21FF76B91008354CC /* RoutesEventHandler.swift */,
 				599BA5A41FF76C1D008354CC /* RoutesViewModel.swift */,
-				599BA5A61FF76C98008354CC /* Route.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -189,8 +201,35 @@
 				599BA5B21FF78444008354CC /* RouteDetailsViewController.xib */,
 				599BA5BC1FF7884F008354CC /* RouteStopTableViewCell.swift */,
 				599BA5BD1FF7884F008354CC /* RouteStopTableViewCell.xib */,
+				599BA5C01FF83433008354CC /* RouteDetailHeaderView.swift */,
+				599BA5C21FF83485008354CC /* RouteDetailHeaderView.xib */,
+				599BA5CC1FF8656D008354CC /* RouteDetailsPageViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		599BA5C41FF8379E008354CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				599BA5C51FF837A8008354CC /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		599BA5C71FF85C6E008354CC /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				599BA5C81FF85C84008354CC /* BusRouteNavigationController.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		599BA5CE1FF895C6008354CC /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				599BA5A61FF76C98008354CC /* Route.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +320,7 @@
 				599BA5B41FF78444008354CC /* RouteDetailsViewController.xib in Resources */,
 				599BA5BF1FF7884F008354CC /* RouteStopTableViewCell.xib in Resources */,
 				599BA5611FF73A8E008354CC /* Assets.xcassets in Resources */,
+				599BA5C31FF83485008354CC /* RouteDetailHeaderView.xib in Resources */,
 				599BA5831FF73B6B008354CC /* RoutesViewController.xib in Resources */,
 				599BA55F1FF73A8E008354CC /* Main.storyboard in Resources */,
 				599BA5AC1FF771B7008354CC /* RouteTableViewCell.xib in Resources */,
@@ -304,12 +344,16 @@
 				599BA5AB1FF771B7008354CC /* RouteTableViewCell.swift in Sources */,
 				599BA5881FF76627008354CC /* RoutesPresenter.swift in Sources */,
 				599BA5B31FF78444008354CC /* RouteDetailsViewController.swift in Sources */,
+				599BA5C11FF83433008354CC /* RouteDetailHeaderView.swift in Sources */,
 				599BA58A1FF769A5008354CC /* RoutesTransformer.swift in Sources */,
 				599BA5A51FF76C1D008354CC /* RoutesViewModel.swift in Sources */,
+				599BA5C61FF837A8008354CC /* UIView+.swift in Sources */,
+				599BA5C91FF85C84008354CC /* BusRouteNavigationController.swift in Sources */,
 				599BA5B61FF784C2008354CC /* RouteDetailViewModel.swift in Sources */,
 				599BA57B1FF73B27008354CC /* NetworkManager.swift in Sources */,
 				599BA5861FF7642E008354CC /* RoutesInteractor.swift in Sources */,
 				599BA57E1FF73B5D008354CC /* BaseViewController.swift in Sources */,
+				599BA5CD1FF8656D008354CC /* RouteDetailsPageViewController.swift in Sources */,
 				599BA5A31FF76B91008354CC /* RoutesEventHandler.swift in Sources */,
 				599BA5B81FF7853A008354CC /* RouteDetailsEventHandler.swift in Sources */,
 				599BA5A71FF76C98008354CC /* Route.swift in Sources */,

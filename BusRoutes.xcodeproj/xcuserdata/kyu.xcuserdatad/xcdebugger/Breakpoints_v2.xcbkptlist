@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BusRoutes/RouteDetails/Views/RouteDetailsViewController.swift"
-            timestampString = "536317657.747052"
+            filePath = "BusRoutes/Custom/BusRouteNavigationController.swift"
+            timestampString = "536385969.510557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "updateStops()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "navigationController(_:willShow:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BusRoutes/RouteDetails/Views/RouteDetailsViewController.swift"
-            timestampString = "536317657.747394"
+            filePath = "BusRoutes/RouteDetails/Views/RouteDetailsPageViewController.swift"
+            timestampString = "536385969.510662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "init(route:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

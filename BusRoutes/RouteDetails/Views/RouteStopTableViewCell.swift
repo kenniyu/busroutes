@@ -18,6 +18,7 @@ class RouteStopTableViewCell: UITableViewCell {
     static let className = "RouteStopTableViewCell"
     static let reuseIdentifier = "RouteStopTableViewCell"
     static let nib = UINib(nibName: className, bundle: Bundle(for: RouteStopTableViewCell.self))
+    static let height: CGFloat = 80
     
     @IBOutlet weak var prevStepConnector: UIImageView!
     @IBOutlet weak var nextStepConnector: UIImageView!

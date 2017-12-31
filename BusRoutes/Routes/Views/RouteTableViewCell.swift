@@ -26,6 +26,7 @@ class RouteTableViewCell: UITableViewCell {
     static let className = "RouteTableViewCell"
     static let reuseIdentifier = "RouteTableViewCell"
     static let nib = UINib(nibName: className, bundle: Bundle(for: RouteTableViewCell.self))
+    static let height: CGFloat = 80
     
     @IBOutlet weak var routeName: UILabel!
     @IBOutlet weak var busImageView: UIImageView!

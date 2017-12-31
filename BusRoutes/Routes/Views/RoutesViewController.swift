@@ -28,14 +28,11 @@ class RoutesViewController: BaseViewController {
         super.viewDidLoad()
 
         setup()
-        
         eventHandler.didLoad()
     }
     
     func setup() {
         title = "Routes"
-        
-        // Do any additional setup after loading the view.
         setupTableView()
         
         let presenter = RoutesPresenter(viewController: self)
@@ -43,14 +40,13 @@ class RoutesViewController: BaseViewController {
         eventHandler = presenter
     }
     
-    func registerCells() {
-        tableView.register(RouteTableViewCell.nib, forCellReuseIdentifier: RouteTableViewCell.reuseIdentifier)
-    }
-    
     func setupTableView() {
         registerCells()
-        
         tableView.tableFooterView = UIView()
+    }
+    
+    func registerCells() {
+        tableView.register(RouteTableViewCell.nib, forCellReuseIdentifier: RouteTableViewCell.reuseIdentifier)
     }
     
     func updateRoutes() {
@@ -60,7 +56,7 @@ class RoutesViewController: BaseViewController {
     }
 }
 
-
+// MARK: UITableView methods
 extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -82,16 +78,22 @@ extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return RouteTableViewCell.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = self.viewModel else { return }
-        let route = viewModel.routes[indexPath.row]
-        let routeDetailsViewController = RouteDetailsViewController(route: route)
-        navigationController?.pushViewController(routeDetailsViewController, animated: true)
+        
+        // Push the page VC containing all routes
+        let routesPageViewController = RouteDetailsPageViewController(routes: viewModel.routes, routeIndex: indexPath.row)
+        navigationController?.pushViewController(routesPageViewController, animated: true)
+        
+        // It appears that we don't want a back title, which makes sense if
+        // swiping right shows previous route instead of going back to list view.
+        // However, this is definitely a behavior to call out, as it can collide
+        // with expected behavior of popping current controller from navigation stack
+        navigationItem.backBarButtonItem?.title = ""
         
         tableView.deselectRow(at: indexPath, animated: true)
-        // Present route details screen
     }
 }
